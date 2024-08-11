@@ -1,23 +1,39 @@
 import { Injectable } from '@angular/core';
-import * as usersData from '../../../assets/mocks/users.json';
-import * as orgData from '../../../assets/mocks/organizations.json';
+import { Observable, of } from 'rxjs';
+import { User } from '../models/user.model';
+import { Organization } from '../models/organization.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private users = (usersData as any).default;
-  private organizations = (orgData as any).default;
+  private mockUsers: User[] = [
+    { id: '1', emailOrPhone: 'test@example.com', password: 'password123', organizationName: '' },
+    { id: '2', emailOrPhone: '5551234567', password: 'password123', organizationName: '' }
+  ];
 
-  validateUser(emailOrPhone: string, password: string): boolean {
-    return this.users.some((user: any) => user.emailOrPhone === emailOrPhone && user.password === password);
+  private mockOrganizations: Organization[] = [
+    { id: '1', name: 'ExampleCorp', isVerified: true },
+    { id: '2', name: 'TestOrg', isVerified: false }
+  ];
+
+  checkUserExistence(emailOrPhone: string): Observable<boolean> {
+    const userExists = this.mockUsers.some(user => user.emailOrPhone === emailOrPhone);
+    return of(userExists);
   }
 
-  validateOrganization(orgId: string): boolean {
-    return this.organizations.some((org: any) => org.id === orgId);
+  validateUser(emailOrPhone: string, password: string): Observable<User | null> {
+    const user = this.mockUsers.find(user => user.emailOrPhone === emailOrPhone && user.password === password);
+    return of(user || null);
   }
 
-  getOrganizations() {
-    return this.organizations;
+  createUser(user: User): Observable<User> {
+    this.mockUsers.push(user);
+    return of(user);
+  }
+
+  verifyOrganization(organizationName: string): Observable<boolean> {
+    const organization = this.mockOrganizations.find(org => org.name === organizationName);
+    return of(organization ? organization.isVerified : false);
   }
 }

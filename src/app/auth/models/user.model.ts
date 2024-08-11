@@ -1,7 +1,6 @@
 export interface User {
-    id: string;
-    name: string;
-    emailOrPhone: string;
-    password: string;
-  }
-  
+  id: string;
+  emailOrPhone: string;
+  password: string;
+  organizationName?: string;  // Optional property
+}
