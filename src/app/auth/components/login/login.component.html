@@ -1,5 +1,36 @@
-<form (ngSubmit)="onSubmit()">
+<!-- <form (ngSubmit)="onSubmit()">
   <input type="text" [(ngModel)]="emailOrPhone" name="emailOrPhone" placeholder="Email or Phone" required>
   <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required>
   <button type="submit">Login</button>
-</form>
+</form> -->
+
+<main class="onboard">
+  <div class="frame">
+    <div class="content-wrapper">
+      <section class="image-section">
+        <div class="image-container">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cba93d842135e1bd61c5b9fe46815ef28515ba35514fb566c1360cb5e5d47fb8?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Company logo" class="logo" />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e6997e747db1a187dbc7cab8ad593e8b2a69d3f469770d9987f8050cdcabb9a1?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Login illustration" class="illustration" />
+        </div>
+      </section>
+      <section class="login-section">
+        <form class="login-form" (ngSubmit)="onSubmit()">
+          <h1 class="welcome-text">Welcome Back, John!</h1>
+          <div class="form-group">
+            <label for="email" class="input-label">Enter Email ID</label>
+            <div class="input-container">
+              <input type="email" [(ngModel)]="emailOrPhone" name="emailOrPhone" required id="email" class="input-field" placeholder="Loremipsum@gmail.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="input-label">Enter Password</label>
+            <div class="input-container">
+              <input type="password" [(ngModel)]="password" name="password" required type="password" id="password" class="input-field" placeholder="Password" />
+            </div>
+          </div>
+          <button type="submit" class="submit-button">Next</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</main>

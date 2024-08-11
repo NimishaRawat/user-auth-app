@@ -1,5 +1,40 @@
-<form (ngSubmit)="onSubmit()">
+<!-- <form (ngSubmit)="onSubmit()">
     <input type="text" [(ngModel)]="emailOrPhone" name="emailOrPhone" placeholder="Enter Email or Phone" required>
     <button type="submit">Continue</button>
   </form>
-  
+   -->
+
+   <main class="onboarding">
+    <div class="onboarding-frame">
+      <div class="onboarding-content">
+        <section class="image-section">
+          <div class="image-container">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/edb132063ff28733fd03e236d45a0834143ea45f1e0b3c91b8c31122af9fd219?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Onboarding illustration 1" class="logo-image" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/badd4d34d3a7699828fe4af06def3b17c6c28d02ae70822f7de0dbf081b828d8?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Onboarding illustration 2" class="main-image" />
+          </div>
+        </section>
+        <section class="form-section">
+          <div class="login-container">
+            <h1 class="welcome-text">Welcome</h1>
+            <form class="login-form" (ngSubmit)="onSubmit()" >
+              <div class="input-group">
+                <label for="emailInput" class="input-label">Enter Email ID</label>
+                <div class="input-wrapper">
+                  <input type="email" [(ngModel)]="emailOrPhone" name="emailOrPhone" required id="emailInput" class="input-field" placeholder="Enter Email" aria-label="Enter Email" />
+                </div>
+              </div>
+              <p class="divider-text">(OR)</p>
+              <div class="input-group">
+                <label for="mobileInput" class="input-label">Enter Mobile No.</label>
+                <div class="input-wrapper">
+                  <div class="country-code">91+</div>
+                  <input [(ngModel)]="emailOrPhone" name="emailOrPhone"  required type="tel" id="mobileInput" class="input-field" placeholder="Enter mobile number" aria-label="Enter mobile number" />
+                </div>
+              </div>
+              <button type="submit" class="submit-button">Next</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>

@@ -1,0 +1,178 @@
+:host {
+    display: contents;
+  }
+  
+  .onboarding {
+    display: flex;
+    justify-content: center;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+  
+  .onboarding-frame {
+    background: #f5f5f5;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    padding-right: 80px;
+    overflow: hidden;
+  }
+  
+  .onboarding-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .image-section {
+    width: 57%;
+  }
+  
+  .image-container {
+    background-color: rgba(25, 148, 255, 0.12);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 100%;
+    background: #1994ff;
+    padding: 29px 8px 12px;
+  }
+  
+  .logo-image {
+    aspect-ratio: 2.27;
+    object-fit: contain;
+    width: 118px;
+    margin-left: 20px;
+    max-width: 100%;
+  }
+  
+  .main-image {
+    aspect-ratio: 0.93;
+    object-fit: contain;
+    width: 100%;
+    margin-top: 62px;
+  }
+  
+  .form-section {
+    width: 43%;
+    margin-left: 20px;
+  }
+  
+  .login-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: start;
+    margin: auto 0;
+    font: 600 12px Poppins, sans-serif;
+  }
+  
+  .welcome-text {
+    align-self: start;
+    font-size: 20px;
+    color: #2d2d36;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 333px;
+  }
+  
+  .input-group {
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .input-label {
+    color: #0069d1;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    margin-top: 4px;
+    width: 100%;
+    border-radius: 16px;
+    background: #e4ecee;
+    min-height: 44px;
+    padding: 13px;
+  }
+  
+  .input-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #767676;
+  }
+  
+  .country-code {
+    opacity: 0.7;
+    margin-right: 10px;
+  }
+  
+  .divider-text {
+    color: #767676;
+    opacity: 0.7;
+    margin: 24px 0;
+    text-align: center;
+  }
+  
+  .submit-button {
+    align-self: stretch;
+    border-radius: 16px;
+    background: #0069d1;
+    margin-top: 24px;
+    width: 100%;
+    color: #f5f5f5;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .onboarding-frame {
+      max-width: 100%;
+      padding-right: 20px;
+    }
+  
+    .onboarding-content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .image-section,
+    .form-section {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .image-container {
+      margin-top: 40px;
+    }
+  
+    .logo-image {
+      margin-left: 10px;
+    }
+  
+    .main-image {
+      margin-top: 40px;
+    }
+  
+    .login-container {
+      margin-top: 40px;
+    }
+  
+    .welcome-text,
+    .submit-button {
+      white-space: normal;
+    }
+  
+    .input-wrapper {
+      padding-right: 20px;
+    }
+  }

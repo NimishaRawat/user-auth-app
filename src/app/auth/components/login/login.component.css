@@ -1,0 +1,164 @@
+:host {
+    display: contents;
+  }
+  
+  .onboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+  
+  .frame {
+    background: #f5f5f5;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    padding-right: 80px;
+    overflow: hidden;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .image-section {
+    width: 57%;
+  }
+  
+  .image-container {
+    background-color: #1994ff;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 100%;
+    padding: 29px 8px 12px;
+  }
+  
+  .logo {
+    aspect-ratio: 2.27;
+    object-fit: contain;
+    width: 118px;
+    margin-left: 20px;
+    max-width: 100%;
+  }
+  
+  .illustration {
+    aspect-ratio: 0.93;
+    object-fit: contain;
+    width: 100%;
+    margin-top: 62px;
+  }
+  
+  .login-section {
+    width: 43%;
+    margin-left: 20px;
+  }
+  
+  .login-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: start;
+    margin: auto 0;
+    font: 600 12px Poppins, sans-serif;
+  }
+  
+  .welcome-text {
+    align-self: start;
+    font-size: 20px;
+    color: #2d2d36;
+  }
+  
+  .form-group {
+    display: flex;
+    margin-top: 24px;
+    max-width: 100%;
+    width: 333px;
+    flex-direction: column;
+    justify-content: start;
+  }
+  
+  .input-label {
+    color: #0069d1;
+  }
+  
+  .input-container {
+    display: flex;
+    margin-top: 4px;
+    width: 100%;
+    max-width: 333px;
+    flex-direction: column;
+    color: #767676;
+  }
+  
+  .input-field {
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: #e4ecee;
+    display: flex;
+    min-height: 44px;
+    gap: 10px;
+    padding: 13px;
+    width: 100%;
+    border: none;
+    opacity: 0.7;
+  }
+  
+  .submit-button {
+    align-self: stretch;
+    border-radius: 16px;
+    background: #0069d1;
+    margin-top: 24px;
+    max-width: 100%;
+    width: 332px;
+    color: #f5f5f5;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .frame {
+      max-width: 100%;
+      padding-right: 20px;
+    }
+  
+    .content-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .image-section,
+    .login-section {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .image-container {
+      margin-top: 40px;
+    }
+  
+    .logo {
+      margin-left: 10px;
+    }
+  
+    .illustration {
+      margin-top: 40px;
+    }
+  
+    .login-form {
+      margin-top: 40px;
+    }
+  
+    .input-container,
+    .submit-button {
+      white-space: normal;
+    }
+  }
