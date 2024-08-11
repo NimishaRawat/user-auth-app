@@ -1,186 +1,103 @@
-<!-- <div *ngIf="step === 1">
-  <form (ngSubmit)="onNext()">
-    <input type="text" [(ngModel)]="user.emailOrPhone" name="emailOrPhone" placeholder="EMAIL OR PHONE" required>
-    <input type="password" [(ngModel)]="user.password" name="password" placeholder="Create Password" required>
-    <button type="submit">Next</button>
-  </form>
-</div> -->
-
-<!-- <div *ngIf="step === 2">
-  <form (ngSubmit)="onNext()">
-    <input 
-      type="text" 
-      [(ngModel)]="stepData.organizationName" 
-      name="organizationName" 
-      placeholder="Organization Name" 
-      required 
-      (input)="onOrganizationNameInput()"
-      [class.invalid]="!organizationVerified"
-    >
-    <ul *ngIf="filteredOrganizations$ | async as orgs">
-      <li *ngFor="let org of orgs" (click)="stepData.organizationName = org">{{ org }}</li>
-    </ul>
-    <button type="button" (click)="onBack()">Back</button>
-    <button type="submit">Submit</button>
-  </form>
-  <p *ngIf="!organizationVerified && stepData.organizationName">Organization is not verified. Please check the name and try again.</p>
-</div> -->
-
-
-<main class="onboard">
-  <div class="frame" *ngIf="step === 1">
-    <div class="content-wrapper">
-      <section class="image-section">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/29af211ca535d12355851d1da799e01099ac267390c94b289120a93b1dac4979?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Company logo" class="logo" />
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5dccf329db19f3f99b6154b6ac8b98ce93afb9aafb83f7b456adc7ff3290dca?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Illustration" class="illustration" />
-      </section>
-      <section class="form-section">
-        <form class="create-account-form" (ngSubmit)="onNext()">
-          <h1 class="form-title">Create Account</h1>
-          <div class="progress-bar">
-            <div class="progress-filled"></div>
-            <div class="progress-empty"></div>
-          </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Enter Email ID</label>
-            <input [(ngModel)]="user.emailOrPhone" name="email" required type="email" id="email" class="form-input" placeholder="Loremipsum@gmail.com" required />
-          </div>
-          <div class="form-group">
-            <label for="fullName" class="form-label">Enter Full name</label>
-            <input [(ngModel)]="user.emailOrPhone" name="email" required type="text" id="fullName" class="form-input" placeholder="Full name" required />
-          </div>
-          <div class="form-group">
-            <label for="password" class="form-label">Create Password</label>
-            <input type="password" id="password" class="form-input" placeholder="Password" required />
-          </div>
-          <button type="submit" class="submit-btn">Next</button>
-        </form>
-      </section>
-    </div>
-  </div>
-</main>
-<!-- After next -->
-<!-- <main class="create-account-frame">
-  <section class="create-account-content" *ngIf="step === 2">
-    <div class="logo-column">
-      <div class="logo-container">
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/29af211ca535d12355851d1da799e01099ac267390c94b289120a93b1dac4979?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Company logo" class="company-logo" />
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5dccf329db19f3f99b6154b6ac8b98ce93afb9aafb83f7b456adc7ff3290dca?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Illustration" class="main-illustration" />
+<div class="sign-up">
+  <main class="onboard">
+    <div class="frame" *ngIf="step === 1">
+      <div class="content-wrapper">
+        <section class="image-section">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/29af211ca535d12355851d1da799e01099ac267390c94b289120a93b1dac4979?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Company logo" class="logo" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5dccf329db19f3f99b6154b6ac8b98ce93afb9aafb83f7b456adc7ff3290dca?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Illustration" class="illustration" />
+        </section>
+        <section class="form-section">
+          <form class="create-account-form" (ngSubmit)="onNext()">
+            <h1 class="form-title">Create Account</h1>
+            <div class="progress-bar">
+              <div class="progress-filled"></div>
+              <div class="progress-empty"></div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Enter Email ID</label>
+              <input [(ngModel)]="user.emailOrPhone" name="email" required type="email" id="email" class="form-input" placeholder="Loremipsum@gmail.com" required />
+            </div>
+            <div class="form-group">
+              <label for="fullName" class="form-label">Enter Full name</label>
+              <input [(ngModel)]="user.emailOrPhone" name="email" required type="text" id="fullName" class="form-input" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Create Password</label>
+              <input type="password" id="password" class="form-input" placeholder="Password" required />
+            </div>
+            <button type="submit" class="submit-btn">Next</button>
+          </form>
+        </section>
       </div>
     </div>
-    <div class="form-column">
-      <div class="form-container">
-        <button (click)="onBack()" class="back-button">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb772dc40c5e81858ff74c1366d91cc36afb400885f6c963493cc38bd82e2ad6?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Back arrow" class="back-arrow" />
-          <span>Go Back</span>
-        </button>
-        <form (ngSubmit)="onNext()" class="create-account-form">
-          <h1 class="form-title">Create Account</h1>
-          <div class="progress-bar">
-            <div class="progress-step"></div>
-            <div class="progress-step"></div>
-          </div>
-          <div class="form-group">
-            <label for="organisation-name" class="form-label">Organisation-name</label>
-            <input [(ngModel)]="stepData.organizationName" name="organizationName"  type="text" id="organisation-name" class="form-input" placeholder="Loremipsum@gmail.com" required/>
-            <ul *ngIf="filteredOrganizations$ | async as orgs">
-              <li *ngFor="let org of orgs" (click)="stepData.organizationName = org">{{ org }}</li>
-            </ul>
-          </div>
-          <div class="form-group">
-            <label for="organisation-id" class="form-label">Organisation-id</label>
-            <input type="text" id="organisation-id" class="form-input" placeholder="Full name" />
-          </div>
-          <div class="form-group">
-            <label for="designation" class="form-label">Designation</label>
-            <input type="text" id="designation" class="form-input" placeholder="Password" />
-          </div>
-          <div class="form-group">
-            <label for="birth-date" class="form-label">Birth-date</label>
-            <input type="date" id="birth-date" class="form-input" placeholder="Password" />
-          </div>
-          <div class="form-group-row">
-            <div class="form-group half-width">
-              <label for="city" class="form-label">City</label>
-              <input type="text" id="city" class="form-input" placeholder="Password" />
-            </div>
-            <div class="form-group half-width">
-              <label for="pincode" class="form-label">Pincode</label>
-              <input type="text" id="pincode" class="form-input" placeholder="Password" />
-            </div>
-          </div>
-          <button type="submit" class="submit-button">Next</button>
-        </form>
+  </main>
+  <!-- After next -->
+  
+  <main class="create-account-frame">
+    <section class="create-account-content" *ngIf="step === 2">
+      <div class="logo-column">
+        <div class="logo-container">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/29af211ca535d12355851d1da799e01099ac267390c94b289120a93b1dac4979?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Company logo" class="company-logo" />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5dccf329db19f3f99b6154b6ac8b98ce93afb9aafb83f7b456adc7ff3290dca?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Illustration" class="main-illustration" />
+        </div>
       </div>
-    </div>
-    <p *ngIf="!organizationVerified && stepData.organizationName">Organization is not verified. Please check the name and try again.</p>
-  </section>
-</main> -->
-
-<!-- app.component.html -->
-<main class="create-account-frame">
-  <section class="create-account-content" *ngIf="step === 2">
-    <div class="logo-column">
-      <div class="logo-container">
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/29af211ca535d12355851d1da799e01099ac267390c94b289120a93b1dac4979?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Company logo" class="company-logo" />
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5dccf329db19f3f99b6154b6ac8b98ce93afb9aafb83f7b456adc7ff3290dca?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Illustration" class="main-illustration" />
-      </div>
-    </div>
-    <div class="form-column">
-      <div class="form-container">
-        <button (click)="onBack()" class="back-button">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb772dc40c5e81858ff74c1366d91cc36afb400885f6c963493cc38bd82e2ad6?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Back arrow" class="back-arrow" />
-          <span>Go Back</span>
-        </button>
-        <form (ngSubmit)="onNext()" class="create-account-form">
-          <h1 class="form-title">Create Account</h1>
-          <div class="progress-bar">
-            <div class="progress-step"></div>
-            <div class="progress-step"></div>
-          </div>
-          <div class="form-group">
-            <label for="organisation-name" class="form-label">Organisation-name</label>
-            <input 
-              [(ngModel)]="stepData.organizationName" 
-              name="organizationName"  
-              type="text" 
-              id="organisation-name" 
-              class="form-input" 
-              placeholder="Loremipsum@gmail.com" 
-              required
-              (input)="onOrganizationNameInput()"
-              [class.invalid]="!organizationVerified"
-            />
-            <ul *ngIf="filteredOrganizations$ | async as orgs">
-              <li *ngFor="let org of orgs" (click)="stepData.organizationName = org">{{ org }}</li>
-            </ul>
-          </div>
-          <div class="form-group">
-            <label for="organisation-id" class="form-label">Organisation-id</label>
-            <input type="text" id="organisation-id" class="form-input" placeholder="Full name" />
-          </div>
-          <div class="form-group">
-            <label for="designation" class="form-label">Designation</label>
-            <input type="text" id="designation" class="form-input" placeholder="Password" />
-          </div>
-          <div class="form-group">
-            <label for="birth-date" class="form-label">Birth-date</label>
-            <input type="date" id="birth-date" class="form-input" placeholder="Password" />
-          </div>
-          <div class="form-group-row">
-            <div class="form-group half-width">
-              <label for="city" class="form-label">City</label>
-              <input type="text" id="city" class="form-input" placeholder="Password" />
+      <div class="form-column">
+        <div class="form-container">
+          <button (click)="onBack()" class="back-button">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/fb772dc40c5e81858ff74c1366d91cc36afb400885f6c963493cc38bd82e2ad6?placeholderIfAbsent=true&apiKey=016bddb2c63b456497a9a9fb50af3006" alt="Back arrow" class="back-arrow" />
+            <span>Go Back</span>
+          </button>
+          <form (ngSubmit)="onNext()" class="create-account-form">
+            <h1 class="form-title">Create Account</h1>
+            <div class="progress-bar">
+              <div class="progress-step"></div>
+              <div class="progress-step"></div>
             </div>
-            <div class="form-group half-width">
-              <label for="pincode" class="form-label">Pincode</label>
-              <input type="text" id="pincode" class="form-input" placeholder="Password" />
+            <div class="form-group">
+              <label for="organisation-name" class="form-label">Organisation-name</label>
+              <input 
+                [(ngModel)]="stepData.organizationName" 
+                name="organizationName"  
+                type="text" 
+                id="organisation-name" 
+                class="form-input" 
+                placeholder="Loremipsum@gmail.com" 
+                required
+                (input)="onOrganizationNameInput()"
+                [class.invalid]="!organizationVerified"
+              />
+              <ul *ngIf="filteredOrganizations$ | async as orgs">
+                <li *ngFor="let org of orgs" (click)="stepData.organizationName = org">{{ org }}</li>
+              </ul>
             </div>
-          </div>
-          <button type="submit" class="submit-button">Next</button>
-        </form>
+            <div class="form-group">
+              <label for="organisation-id" class="form-label">Organisation-id</label>
+              <input type="text" id="organisation-id" class="form-input" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label for="designation" class="form-label">Designation</label>
+              <input type="text" id="designation" class="form-input" placeholder="Password" />
+            </div>
+            <div class="form-group">
+              <label for="birth-date" class="form-label">Birth-date</label>
+              <input type="date" id="birth-date" class="form-input" placeholder="Password" />
+            </div>
+            <div class="form-group-row">
+              <div class="form-group half-width">
+                <label for="city" class="form-label">City</label>
+                <input type="text" id="city" class="form-input" placeholder="Password" />
+              </div>
+              <div class="form-group half-width">
+                <label for="pincode" class="form-label">Pincode</label>
+                <input type="text" id="pincode" class="form-input" placeholder="Password" />
+              </div>
+            </div>
+            <button type="submit" class="submit-button">Next</button>
+          </form>
+        </div>
       </div>
-    </div>
-    <p *ngIf="!organizationVerified && stepData.organizationName">Organization is not verified. Please check the name and try again.</p>
-  </section>
-</main>
+      <p *ngIf="!organizationVerified && stepData.organizationName">Organization is not verified. Please check the name and try again.</p>
+    </section>
+  </main>
+  
+</div>

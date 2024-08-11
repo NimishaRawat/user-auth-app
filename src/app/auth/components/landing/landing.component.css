@@ -1,3 +1,8 @@
+
+.landing{
+  background-color: lightblue;
+  padding: 100px 100px ;
+}
 :host {
     display: contents;
   }

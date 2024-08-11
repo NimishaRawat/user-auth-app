@@ -1,8 +1,14 @@
 :host {
     display: contents;
   }
-  
+  .login{
+    background-color: lightblue;
+    padding: 100px 100px;
+  }
   .onboard {
+    border: lightblue;
+    border-radius: 5px;
+    border-width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;

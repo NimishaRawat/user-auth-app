@@ -1,7 +1,10 @@
 :host {
     display: contents;
   }
-  
+  .sign-up{
+    background-color: lightblue;
+    padding: 100px 100px;
+  }
   .onboard {
     display: flex;
     flex-direction: column;
