@@ -8,8 +8,18 @@
 
 <div *ngIf="step === 2">
   <form (ngSubmit)="onNext()">
-    <input type="text" [(ngModel)]="stepData.organizationName" name="organizationName" placeholder="Organization Name" required>
-    <!-- Additional fields like Designation, Birth-date, etc. -->
+    <input 
+      type="text" 
+      [(ngModel)]="stepData.organizationName" 
+      name="organizationName" 
+      placeholder="Organization Name" 
+      required 
+      (input)="onOrganizationNameInput()"
+      [class.invalid]="!organizationVerified"
+    >
+    <ul *ngIf="filteredOrganizations$ | async as orgs">
+      <li *ngFor="let org of orgs" (click)="stepData.organizationName = org">{{ org }}</li>
+    </ul>
     <button type="button" (click)="onBack()">Back</button>
     <button type="submit">Submit</button>
   </form>
