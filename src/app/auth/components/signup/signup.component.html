@@ -1,0 +1,25 @@
+<div class="signup-container">
+    <h2>Sign Up</h2>
+  
+    <div *ngIf="step === 1">
+      <input type="text" placeholder="Email or Phone" [(ngModel)]="emailOrPhone" />
+      <input type="text" placeholder="Name" [(ngModel)]="name" />
+      <input type="password" placeholder="Create Password" [(ngModel)]="password" />
+      <button (click)="onNext()">Next</button>
+    </div>
+  
+    <div *ngIf="step === 2">
+      <select [(ngModel)]="organizationId">
+        <option *ngFor="let org of organizations" [value]="org.id">{{ org.name }}</option>
+      </select>
+      <input type="text" placeholder="Designation" [(ngModel)]="designation" />
+      <input type="date" [(ngModel)]="birthDate" />
+      <input type="text" placeholder="City" [(ngModel)]="city" />
+      <input type="text" placeholder="Pincode" [(ngModel)]="pincode" />
+      <button (click)="onBack()">Back</button>
+      <button (click)="onNext()">Complete Signup</button>
+    </div>
+  
+    <p *ngIf="signupError" class="error-message">{{ signupError }}</p>
+  </div>
+  
