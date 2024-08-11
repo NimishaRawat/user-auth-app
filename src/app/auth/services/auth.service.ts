@@ -36,4 +36,12 @@ export class AuthService {
     const organization = this.mockOrganizations.find(org => org.name === organizationName);
     return of(organization ? organization.isVerified : false);
   }
+
+
+  getMatchingOrganizations(query: string): Observable<string[]> {
+    const matchingOrgs = this.mockOrganizations
+      .filter(org => org.name.toLowerCase().includes(query.toLowerCase()))
+      .map(org => org.name);
+    return of(matchingOrgs);
+  }
 }

@@ -8,9 +8,19 @@
 
 <!-- <div *ngIf="step === 2">
   <form (ngSubmit)="onNext()">
-    <input type="text" [(ngModel)]="stepData.organizationName" name="organizationName" placeholder="Organization Name" required> -->
-    <!-- Additional fields like Designation, Birth-date, etc. -->
-    <!-- <button type="button" (click)="onBack()">Back</button>
+    <input 
+      type="text" 
+      [(ngModel)]="stepData.organizationName" 
+      name="organizationName" 
+      placeholder="Organization Name" 
+      required 
+      (input)="onOrganizationNameInput()"
+      [class.invalid]="!organizationVerified"
+    >
+    <ul *ngIf="filteredOrganizations$ | async as orgs">
+      <li *ngFor="let org of orgs" (click)="stepData.organizationName = org">{{ org }}</li>
+    </ul>
+    <button type="button" (click)="onBack()">Back</button>
     <button type="submit">Submit</button>
   </form>
   <p *ngIf="!organizationVerified && stepData.organizationName">Organization is not verified. Please check the name and try again.</p>
@@ -73,6 +83,9 @@
           <div class="form-group">
             <label for="organisation-name" class="form-label">Organisation-name</label>
             <input [(ngModel)]="stepData.organizationName" name="organizationName"  type="text" id="organisation-name" class="form-input" placeholder="Loremipsum@gmail.com" required/>
+            <ul *ngIf="filteredOrganizations$ | async as orgs">
+              <li *ngFor="let org of orgs" (click)="stepData.organizationName = org">{{ org }}</li>
+            </ul>
           </div>
           <div class="form-group">
             <label for="organisation-id" class="form-label">Organisation-id</label>
